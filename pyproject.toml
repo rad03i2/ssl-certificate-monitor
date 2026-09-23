@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssl-certificate-monitor"
+version = "1.0.0"
+description = "Monitor TLS certificate validity and expiry from the command line."
+requires-python = ">=3.10"
+authors = [{name = "Radwan Abdulhadi Ahmed"}]
+license = {text = "MIT"}
+keywords = ["ssl", "tls", "certificate", "monitoring"]
+
+[project.scripts]
+ssl-monitor = "ssl_certificate_monitor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
